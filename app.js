@@ -2,6 +2,8 @@
 
 window.addEventListener("load", initApp);
 
+// ========== Global Variables ========== //
+
 const names = [
     "Peter",
     "Magdalena",
@@ -75,6 +77,8 @@ const teacher = {
     image: "https://share.cederdorff.com/images/petl.jpg"
 };
 
+// ========== initApp ========== //
+
 function initApp() {
     console.log("initApp: app.js is running 🎉");
 
@@ -111,13 +115,21 @@ function initApp() {
     sortTeachersByAge();
 }
 
+// ========== forEach ========== //
+
 function forEachTeachers() {
     teachers.forEach(logTeacher);
 }
 
 function logTeacher(teacher, index) {
     console.log(index, teacher);
+    console.log(index % 2);
+    if (index % 2 === 1) {
+        console.log("First teacher in the array:", teacher);
+    }
 }
+
+// ========== for loop ========== //
 
 function forTeachers() {
     for (let index = 0; index < teachers.length; index++) {
@@ -126,11 +138,15 @@ function forTeachers() {
     }
 }
 
+// ========== for of loop ========== //
+
 function forOfTeachers() {
     for (const teacher of teachers) {
         console.log(teacher);
     }
 }
+
+// ========== for in loop ========== //
 
 function forInTeacher(teacher) {
     for (const key in teacher) {
@@ -139,6 +155,8 @@ function forInTeacher(teacher) {
         console.log(value);
     }
 }
+
+// ========== while loops ========== //
 
 function whileNamesLength() {
     let index = 0;
@@ -177,6 +195,8 @@ function whileFindTeacherByMail(mail) {
     }
 }
 
+// ========== Filter items: array.filter(...) ========== //
+
 function filterTeachersByTitle(title) {
     const results = teachers.filter(checkTitle);
 
@@ -199,6 +219,7 @@ function searchTeachersByName(name) {
     return results;
 }
 
+// ========== Find one item: array.find(...) ========== //
 function findTeacherByMail(mail) {
     const result = teachers.find(checkMail);
 
@@ -221,6 +242,8 @@ function findTeacherByAge(age) {
     return result;
 }
 
+// ========== Sorting: array.sort() ========== //
+
 function sortNames() {
     names.sort();
     console.log(names);
@@ -241,6 +264,7 @@ function sortTeachersByAge() {
     console.log(teachers);
 }
 
+// compare functions - .sort() helper functions
 function compareName(teacher1, teacher2) {
     return teacher1.name.localeCompare(teacher2.name);
 }
