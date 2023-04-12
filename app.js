@@ -123,11 +123,15 @@ function forEachTeachers() {
 
 function logTeacher(teacher, index) {
     console.log(index, teacher);
-    console.log(index % 2);
-    if (index % 2 === 1) {
-        console.log("First teacher in the array:", teacher);
-    }
 }
+
+// function logTeacher(teacher, index) {
+//     console.log(index, teacher);
+//     console.log(index % 2);
+//     if (index % 2 === 1) {
+//         console.log("First teacher in the array:", teacher);
+//     }
+// }
 
 // ========== for loop ========== //
 
