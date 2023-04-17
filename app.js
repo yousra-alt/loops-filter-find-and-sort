@@ -94,6 +94,10 @@ function initApp() {
   loopthroguhFirstYears();
   loopThroughFiveLastYears();
   logNumbers();
+  forOfTeachers();
+  teachersOver40();
+  forOfSearchTeachersByName("sen");
+  forInTeacher();
 }
 
 function loopThroughNames(name) {
@@ -127,6 +131,7 @@ function logYear(year, index) {
   }
 }
 
+// ========== for of loop ========== //
 function loopYears() {
   for (let index = 0; index < years.length; index++) {
     const year = years[index];
@@ -192,23 +197,59 @@ function logNumbers() {
   }
 }
 
-// ========== forEach ========== //
+//   for (let index = 0; index < names.length; index++) {
+//   const name = names[index];
+//   console.log(name);
+// }
 
-// ========== for loop ========== //
-
-for (let index = 0; index < names.length; index++) {
-  const name = names[index];
-  console.log(name);
-}
-
-for (let index = 0; index < teachers.length; index++) {
-  const teacher = teachers[index];
-  console.log(teacher);
-}
+// for (let index = 0; index < teachers.length; index++) {
+//   const teacher = teachers[index];
+//   console.log(teacher);
+// }
 
 // ========== for of loop ========== //
 
+function forOfTeachers() {
+  for (const teacher of teachers) {
+    console.log(teacher);
+  }
+}
+
+function teachersOver40() {
+  const results = [];
+
+  for (const teacher of teachers) {
+    if (teacher.age > 40) {
+      results.push(teacher);
+    }
+  }
+  console.log(results);
+  // Birgitte og Peter
+}
+
+function forOfSearchTeachersByName(searchValue) {
+  console.log(searchValue);
+  const results = [];
+  for (const teacher of teachers) {
+    if (teacher.name.includes(searchValue)) {
+      results.push(teacher);
+    }
+    console.log(results);
+  }
+//   søge funktion. Når funktionen kaldes i initapp, kan man ændre parameter efter hvad der skal søges efter.
+}
+
 // ========== for in loop ========== //
+
+function forInTeacher () {
+for (const key in teacher) {
+        console.log(key)
+        const value = teacher[key];
+        console.log(value)
+            
+        }
+    }
+
 
 // ========== while loops ========== //
 
